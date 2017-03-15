@@ -1,0 +1,11 @@
+Unstaged changes after reset:
+M	package.json
+D	src/App.css
+D	src/App.js
+D	src/App.test.js
+M	src/index.js
+D	src/logo.svg
+M	src/pages/app/App.css
+M	src/pages/app/App.js
+M	src/pages/app/App.test.js
+M	src/pages/app/images/logo.svg
