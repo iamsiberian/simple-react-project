@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { get } from '../../utils/fetcher';
 
 import logo from './images/logo.svg';
 import './style.css';
 
-class App extends React.Component {
+
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    /* You can see the result of this request in dev tools of browser in Network tab */
+    get('mockapi/app.json');
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,5 +33,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
