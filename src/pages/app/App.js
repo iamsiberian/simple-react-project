@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import logo from './images/logo.svg';
-import './App.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class App extends Component {
+import logo from './images/logo.svg';
+import './style.css';
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -13,6 +15,11 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+          <Link to='/app/nested'>
+            Go to '/app/nested'
+          </Link>
+        </div>
       </div>
     );
   }
