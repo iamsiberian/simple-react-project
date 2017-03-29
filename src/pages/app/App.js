@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { get } from '../../utils/fetcher';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getAppData } from './action';
 
 import logo from './images/logo.svg';
 import './style.css';
 
 
-export default class App extends React.Component {
+class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    /* You can see the result of this request in dev tools of browser in Network tab */
-    get('mockapi/app.json');
+  componentDidMount() {
+    this.props.getAppData();
   }
 
   render() {
@@ -24,6 +24,7 @@ export default class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>{this.props.data}</p>
         <div>
           <Link to='/app/nested'>
             Go to '/app/nested'
@@ -33,3 +34,16 @@ export default class App extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.appCompReducer.data,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getAppData: bindActionCreators(getAppData, dispatch)
+  // getAppData: () => { dispatch(getAppData()); }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

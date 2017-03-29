@@ -1,4 +1,5 @@
 {
   "success": true,
-  "errors": null
+  "errors": null,
+  "data": "something data"
 }
