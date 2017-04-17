@@ -11,6 +11,8 @@ import './style.css';
 class App extends React.Component {
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    let localSt = localStorage.getItem('jhfhdfhd');
     this.props.getAppData();
   }
 

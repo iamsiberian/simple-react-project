@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import {
@@ -20,13 +21,12 @@ import './index.css';
 const history = createBrowserHistory();
 const store = newStore();
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <Router history={history}>
       <Layout>
         <Content>
-          <Redirect exact from='/' to='/app' />
-          <Route exact path='/app' component={App} />
+          <Route exact path='/' component={App} />
           <Route exact path='/app/nested' component={Nested} />
         </Content>
       </Layout>
