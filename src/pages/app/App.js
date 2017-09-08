@@ -16,12 +16,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className='App'>
+        <div className='App-header'>
+          <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
+        <p className='App-intro'>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <p>{this.props.data}</p>
@@ -38,11 +38,11 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     data: state.appCompReducer.data,
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getAppData: bindActionCreators(getAppData, dispatch)
+  getAppData: bindActionCreators(getAppData, dispatch),
   // getAppData: () => { dispatch(getAppData()); }
 });
 

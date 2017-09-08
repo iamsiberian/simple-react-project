@@ -5,7 +5,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect
+  Redirect,
 } from 'react-router-dom';
 
 import { newStore } from './stores/store';

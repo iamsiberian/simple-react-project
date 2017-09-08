@@ -7,8 +7,8 @@ export function getAppData() {
       .then((response) => {
         dispatch({
           type: SET_APP_DATA,
-          data: response.data
-        })
-      })
-  }
+          data: response.data,
+        });
+      });
+  };
 }
