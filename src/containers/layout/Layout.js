@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import './style.css';
+import './style.scss';
 
 export default class Layout extends React.Component {
   render() {
@@ -14,5 +15,5 @@ export default class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 };

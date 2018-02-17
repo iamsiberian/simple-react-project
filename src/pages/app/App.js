@@ -1,20 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getAppData } from './action';
 
 import logo from './images/logo.svg';
-import './style.css';
+import './style.scss';
 
 
-class App extends React.Component {
-
-  componentDidMount() {
-    this.props.getAppData();
-  }
+export default class App extends React.Component {
 
   render() {
+    const array = [
+      'hello1',
+      'hello2',
+      'hello3'
+    ];
+
+    const test = {
+      hello: 'hello'
+    };
+
+    const testTest = {
+      ...test,
+      hello: 'hello1'
+    };
+
+    const arrayComp = array.map(item => {
+      return <div>{item}</div>
+    });
+
     return (
       <div className="App">
         <div className="App-header">
@@ -24,26 +36,13 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>{this.props.data}</p>
         <div>
-          <Link to='/app/nested'>
-            Go to '/app/nested'
+          <Link to='/nested'>
+            Go to '/nested'
           </Link>
         </div>
+        {arrayComp}
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    data: state.appCompReducer.data,
-  }
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  getAppData: bindActionCreators(getAppData, dispatch)
-  // getAppData: () => { dispatch(getAppData()); }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);

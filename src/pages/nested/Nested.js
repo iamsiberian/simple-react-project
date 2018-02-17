@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import './style.css';
+import './style.scss';
 
 export default class Nested extends React.Component {
   render() {
@@ -9,8 +10,8 @@ export default class Nested extends React.Component {
       <div className='nested'>
         nested
         <div>
-          <Link to='/app'>
-            Go to '/app'
+          <Link to='/'>
+            Go to '/'
           </Link>
         </div>
       </div>
@@ -19,5 +20,5 @@ export default class Nested extends React.Component {
 }
 
 Nested.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 };
