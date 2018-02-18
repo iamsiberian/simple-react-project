@@ -1,0 +1,11 @@
+.radio-button {
+  &__label {
+    display: block;
+    color: #c1c1c1;
+    font-size: 20px;
+    padding: 10px 0 0 0;
+  }
+  &__radio {
+    margin-right: 10px;
+  }
+}

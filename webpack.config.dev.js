@@ -15,7 +15,8 @@ module.exports = {
     contentBase: paths.build,
     watchContentBase: true,
     inline: true,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
 
   output: {
@@ -65,7 +66,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,
+        test: /\.(png|jp(e?)g|svg)$/,
         use: [
           {
             loader: 'file-loader',

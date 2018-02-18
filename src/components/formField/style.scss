@@ -1,0 +1,24 @@
+.form-field {
+  &__label {
+    display: block;
+    padding-top: 21px;
+    font-size: 20px;
+  }
+  &__input {
+    box-sizing: border-box;
+    margin-top: 10px;
+    display: block;
+    background-color: #f7f9fc;
+    border: solid 1px #f7f9fc;
+    height: 60px;
+    width: 100%;
+    padding: 0 7% 0 7%;
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-size: 20px;
+
+    &:focus {
+      outline: none;
+      border: solid 1px #5c6bc0;
+    }
+  }
+}

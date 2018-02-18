@@ -80,7 +80,18 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,
+        test: /\.json$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'api/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jp(e?)g|svg)$/,
         use: [
           {
             loader: 'file-loader',
